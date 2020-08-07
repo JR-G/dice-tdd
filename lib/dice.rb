@@ -1,5 +1,13 @@
 class Dice
-  def roll(number_of_dice = 1)
-    number_of_dice.times { puts rand(1..6) }
+  def self.roll(number_of_dice = 1)
+    results = []
+    number_of_dice.times { results << dice_roll }
+    return results
   end
+
+  private
+  def self.dice_roll
+    rand(1..6)
+  end
+
 end
